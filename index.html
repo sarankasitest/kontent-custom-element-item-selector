@@ -140,7 +140,7 @@
 
         $.ajax({
           url: urlfindItems,
-          beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer '+ previewkey);},
+          beforeSend: function(xhr){if(previewkey) {xhr.setRequestHeader('Authorization', 'Bearer '+ previewkey);}},
           dataType: "text",
           success: function(data) {
             data = JSON.parse(data);
