@@ -125,8 +125,13 @@
       }
 
       function setup(value) {
+        var url = "https://deliver.kontent.ai/";
+        if(previewkey)
+        {
+          url = "https://preview-deliver.kontent.ai/";
+        }
         var urlfindItems =
-          "https://preview-deliver.kontent.ai/" +
+          url +
           projectid +
           "/items?depth=0&elements=null";
         if (filter) {
